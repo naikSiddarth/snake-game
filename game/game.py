@@ -23,9 +23,9 @@ screen.onkey(key="Left", fun=snake.Left)
 screen.onkey(key="Right", fun=snake.Right)
 
 while game_is_on:
-    screen.update()
     sleep(0.2)
     snake.move()
+    screen.update()
     
     #Detect collision with food
     distance = snake.head.distance(food)
@@ -33,4 +33,8 @@ while game_is_on:
         food.refresh()
         scoreboard.update()
 
+    #Detect collision with wall
+    if snake.head.xcor() >= 280 or snake.head.xcor() <= -280 or snake.head.ycor() >= 280 or snake.head.ycor() <= -280 :
+        game_is_on = False
+        scoreboard.gameover()
 screen.exitonclick()
