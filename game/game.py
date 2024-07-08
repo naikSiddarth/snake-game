@@ -23,7 +23,7 @@ screen.onkey(key="Left", fun=snake.Left)
 screen.onkey(key="Right", fun=snake.Right)
 
 while game_is_on:
-    sleep(0.2)
+    sleep(0.1)
     snake.move()
     screen.update()
     
