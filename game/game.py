@@ -31,10 +31,12 @@ while game_is_on:
     distance = snake.head.distance(food)
     if distance < 15:
         food.refresh()
+        snake.extend()
         scoreboard.update()
 
     #Detect collision with wall
     if snake.head.xcor() >= 280 or snake.head.xcor() <= -280 or snake.head.ycor() >= 280 or snake.head.ycor() <= -280 :
         game_is_on = False
         scoreboard.gameover()
+
 screen.exitonclick()
