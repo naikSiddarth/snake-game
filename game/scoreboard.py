@@ -9,7 +9,7 @@ class Scoreboard(Turtle):
         self.color("white")
         self.hideturtle()
         self.goto(0,280)
-        self.write(f"Score : {self.score} , High score : {self.highscore}", align="center", font=FONT)
+        self.write(f"Score : {self.score} High score : {self.highscore}", align="center", font=FONT)
 
     def update(self):
         self.clear()
